@@ -65,11 +65,6 @@ var cnItems = {
     'bleed': '引流',
     'of': '个已获得，共',
     'Total Achievement Levels': '个成就',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
 
 
     //描述文本：
@@ -762,4 +757,6 @@ var cnRegReplace = new Map([
     [/^Micro Universe: (\d+) of (\d+) \($/, '微型宇宙：$1个已获得，共$2个('],
     [/^Evil Universe: (\d+) of (\d+) \($/, '邪恶宇宙：$1个已获得，共$2个('],
     [/^Antimatter Universe: (\d+) of (\d+) \($/, '反物质宇宙：$1个已获得，共$2个('],
+    [/^\(([\d\.]+)% Complete$/, '个(完成率：$1%'],
+    [/^\(([\d\.]+)% Purchased$/, '个(购买率：$1%'],
 ]);
