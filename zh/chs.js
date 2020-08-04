@@ -33,7 +33,6 @@ var cnItems = {
     'Universe': '宇宙',
     'Other': '其它',
     'All Universes': '所有宇宙',
-    'Standard': '标准',
     'Antimatter': '反物质',
     'Evil': '邪恶',
     'Heavy': '高引力',
