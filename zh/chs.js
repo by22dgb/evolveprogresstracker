@@ -12,8 +12,13 @@ var cnItems = {
     _OTHER_: [],
 
     //未分类：
+    'Evolve Progress Tracker': '进化成就追踪器',
+    'GitHub': '原版追踪器地址',
+    'Evolve by Demagorddon': '原版游戏地址',
     '': '',
-    
+    '': '',
+
+
     //原样
     '': '',
     '': '',
@@ -106,5 +111,5 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
-
+    [/^(\s*)For Evolve version$/, '$1适用于进化游戏版本'],
 ]);
