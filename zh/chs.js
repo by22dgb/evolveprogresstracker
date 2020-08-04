@@ -472,12 +472,11 @@ var cnItems = {
     'Bioseeded off of a planet with three poor geological traits': '在三个负面地质特性的星球建造飞船完成播种。',
     'Ice cream not included': '不含冰淇淋！',
     'Utopia': '乌托邦',
-    'Raised your morale to 500%': '士气提升至 500% 。',
+    //'Raised your morale to 500%': '士气提升至 500% 。', 在下方
     'Don\'t wake from the illusion.': '不要唤醒梦中人。',
     'Demon Slayer': '恶魔屠戮者',
     'Killed 666 million demons': '杀死6亿6600万头恶魔。',
     'They are Legion': '他们是燃烧军团。',
-    'Earned %0 Achievements': '完成 %0 个成就。',
     'Trail Novice': '新手的足迹',
     'You have died of dysentery': '你死于痢疾',
     'Gene Journeyman': '基因熟练工',
@@ -791,6 +790,7 @@ var cnPrefix = {
     " ": "",
     "Science 1, Fearmongers 0": "懂科学，就无需恐惧。",
     "Bioseeded a with a macro sized race (small race inside micro universe)": "在微型宇宙里，用微型种族完成播种。",
+    "Raised your morale to 500%": "士气提升至 500% 。",
 }
 
 //需处理的后缀
@@ -848,4 +848,5 @@ var cnExcludePostfix = [
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
     [/^(\s*)For Evolve version$/, '$1适用于进化游戏版本'],
+    [/^Earned (\d+) Achievements$/, '完成 %1 个成就。'],
 ]);
