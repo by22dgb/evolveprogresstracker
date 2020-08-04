@@ -565,7 +565,6 @@ var cnItems = {
     'Artificer': '技工',
     'Doubles the rate at which craftsmen work.': '工匠速度 +100% （原料消耗同样翻倍）',
     'Detail Oriented': '注重细节',
-    'Craftsmen produce %0% more product from the same amount of raw materials.': '工匠产量 +%0% （原料消耗保持不变）',
     'Rigorous': '严格',
     'Geographer': '地理学家',
     'Start new games with the build and research queue unlocked': '解锁建筑队列和科研队列的情况下开始新游戏',
@@ -948,5 +947,6 @@ var cnRegReplace = new Map([
     [/^(\s*)For Evolve version$/, '$1适用于进化游戏版本'],
     [/^Earned (\d+) Achievements$/, '完成 $1 个成就。'],
     [/^Gain (\d+)x genes from genome mutation and (\d+)% more from auto sequencing$/, '基因突变获得的基因数量提升为原先的 $1 倍，自动测序获得的基因数量 +$2%'],
-    [/^Gain increasing Plasmids from each mutation, caps at +(\d+) per mutation.$/, '基因突变获得的质粒数量提升，上限为 $1'],
+    [/^Gain increasing Plasmids from each mutation, caps at \+(\d+) per mutation.$/, '基因突变获得的质粒数量提升，上限为 $1'],
+    [/^Craftsmen produce (\d+)% more product from the same amount of raw materials.$/, '工匠产量 +$1% （原料消耗保持不变）'],
 ]);
