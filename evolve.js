@@ -40,7 +40,7 @@ const icons = {
 
 $.ajaxSetup({ async: false });
 let strings;
-$.getJSON("strings.json", (data) => {
+$.getJSON("strings-chs.json", (data) => {
 	strings = data;
 });
 
