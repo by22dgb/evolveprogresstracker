@@ -637,13 +637,16 @@ var cnItems = {
     'Unlocked Space Casinos for normal game use.': '解锁太空赌场。',
     '1 Geothermal Energy.': '2 地热发电厂发电量',
     'Reduce time before government can be changed again by -10% / -20% / -30% / -40% / -50% after a revolution.': '社会体制改革的冷却时间减少 10% / 20% / 30% / 40% / 50% 。',
-    'Start with 25 Steel.': '开局拥有 25 钢。',
-    'Thermal Collector ++% Efficiency': '集热器效率增加。',
-    'Start with bonus Soul Gems.': '开局拥有额外的灵魂宝石。',
-    '10% Soul Gem drop rate.': '10% 灵魂宝石掉率。',
-    '1 / +2 / +3 / +4 / +5 per universe custom race complexity.': '1 / +2 / +3 / +4 / +5 基因奢侈税基础。自定义种族时，选择特质数量超出基础值将触发基因奢侈税，原基础为 4 个特质，现额外增加相应数量。',
+    '0 Star: Start with 25 Steel.': '无星：开局拥有 25 钢。',
+    '1 Star: Thermal Collector +10% Efficiency': '白星：集热器效率增加 10% 。',
+    '2 Star: Start with bonus Soul Gems. (1 per universe completion': '铜星：开局拥有额外的灵魂宝石。(每在一个宇宙中完成本成就，就增加 1 ',
+    '3 Star: Additional Thermal Collector +15% Efficiency': '银星：集热器效率再增加 15% 。',
+    '4 Star: +10% Soul Gem drop rate.': '金星： +10% 灵魂宝石掉率。',
+    '4 Star: +5% Thermal Collector Efficiency per 3-star achievement in non-standard universes': '金星：每在非标准宇宙中完成银星及以上的本成就，集热器效率就再增加 5%',
+    '1 / +2 / +3 / +4 / +5 custom race complexity per star level': '1 / +2 / +3 / +4 / +5 基因奢侈税基础。自定义种族时，选择特质数量超出基础值将触发基因奢侈税，原基础为 4 个特质，现额外增加相应数量。',
     'Base RNA generation +0.5x / +1x / +1.5x / +2x / +2.5, Base DNA generation +0.25x / +0.5x / +0.75x / +1x / +1.25.': '基础 RNA 增长增加 0.5 / 1 / 1.5 / 2 / 2.5 倍，基础 DNA 增长增加 0.25 / 0.5 / 0.75 / 1 / 1.25 倍。',
     '1 / +1 / +2 / +2 / +3 Research Queue, +0 / +1 / +1 / +2 / +2 Build Queue.': '1 / +1 / +2 / +2 / +3 科研队列上限，+0 / +1 / +1 / +2 / +2 建筑队列上限。',
+    '1 gene during custom species creation per star level per universe (max of +5 genes per universe). This perk is not currently listed on the stats page in-game.': '1 自定义种族选择特质时的点数数量(每个宇宙最多 +5 点)。游戏中目前未列出此特权。',
 
 
     //原样
