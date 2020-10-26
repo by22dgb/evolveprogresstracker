@@ -647,7 +647,14 @@ var cnItems = {
     'Base RNA generation +0.5x / +1x / +1.5x / +2x / +2.5, Base DNA generation +0.25x / +0.5x / +0.75x / +1x / +1.25.': '基础 RNA 增长增加 0.5 / 1 / 1.5 / 2 / 2.5 倍，基础 DNA 增长增加 0.25 / 0.5 / 0.75 / 1 / 1.25 倍。',
     '1 / +1 / +2 / +2 / +3 Research Queue, +0 / +1 / +1 / +2 / +2 Build Queue.': '1 / +1 / +2 / +2 / +3 科研队列上限，+0 / +1 / +1 / +2 / +2 建筑队列上限。',
     '1 gene during custom species creation per star level per universe (max of +5 genes per universe). This perk is not currently listed on the stats page in-game.': '1 自定义种族选择特质时的点数数量(每个宇宙最多 +5 点)。游戏中目前未列出此特权。',
-
+    'Achievement Not Awarded': '成就未获得',
+    'Upgrade Purchased': '升级已购买',
+    'Standard Universe': '标准宇宙',
+    'Heavy Universe': '高引力宇宙',
+    'Micro Universe': '微型宇宙',
+    'Evil Universe': '邪恶宇宙',
+    'Antimatter Universe': '反物质宇宙',
+    
 
     //原样
     '': '',
@@ -761,4 +768,5 @@ var cnRegReplace = new Map([
     [/^Antimatter Universe: (\d+) of (\d+) \($/, '反物质宇宙：$1个已获得，共$2个('],
     [/^\(([\d\.]+)% Complete$/, '个(完成率：$1%'],
     [/^\(([\d\.]+)% Purchased$/, '个(购买率：$1%'],
+    [/^(\d+) Challenges Completed$/, '完成$1星挑战。'],
 ]);
