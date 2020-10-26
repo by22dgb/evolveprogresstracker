@@ -768,5 +768,5 @@ var cnRegReplace = new Map([
     [/^Antimatter Universe: (\d+) of (\d+) \($/, '反物质宇宙：$1个已获得，共$2个('],
     [/^\(([\d\.]+)% Complete$/, '个(完成率：$1%'],
     [/^\(([\d\.]+)% Purchased$/, '个(购买率：$1%'],
-    [/^(\d+) Challenges Completed$/, '完成$1星挑战。'],
+    [/^(\d+) Challenges Completed$/, '完成$1星挑战'],
 ]);
