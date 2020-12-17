@@ -1095,7 +1095,6 @@ let blackholeDesc = mass_extinctionDesc = creatorDesc = explorerDesc = whitehole
 let heavyweightDesc = dissipated3Desc = dissipated4Desc = anarchistDesc = steelenDesc = '';
 let novice1Desc = novice2Desc = journeyman1Desc = journeyman2Desc = minersDesc = joylessDesc = '';
 let technoDesc5 = '';
-let gladiatorDesc = data.stats.achieve['gladiator'] ? data.stats.achieve.gladiator.l : 1;
 for (i = 1; i <= 5; i++) {
 	blackholeDesc += i * 5;
 	if (i < 5) blackholeDesc += '% / ';
@@ -1127,6 +1126,9 @@ for (i = 1; i <= 5; i++) {
 	if (i < 5) minersDesc += ' / ';
 	technoDesc5 += i;
 	if (i < 5) technoDesc5 += ' / +';
+	if (i < 5) gladiatorDesc += '% / ';
+	gladiatorDesc += i * 20;
+
 }
 //let dissipated2Desc = `1kW (${star2}) / +2kw (${star4})`;
 let dissipated2Desc = `1kW (2-star) / +2 (4-star)`;
@@ -1209,7 +1211,6 @@ const perksDesc = {
 const keywords = {
 	apocalypse: ['reset'],
 	ascended: ['reset'],
-	technophobe: ['reset', 'challenge', 'perk'],
 	dreaded: ['reset'],
 	anarchist: ['reset', 'perk'],
 	squished: ['reset', 'universe'],
@@ -1336,6 +1337,7 @@ const keywords = {
 	extinct_unicorn: ['species', 'universe'],
 	extinct_junker: ['species', 'perk', 'scenario'],
 	extinct_custom: ['species'],
+    technophobe: ['reset', 'challenge', 'perk'],
 }
 
 function createIcon(div, universe, type, item) {
