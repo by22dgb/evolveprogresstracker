@@ -228,7 +228,7 @@ const races = {
         name: loc('race_junker'),
     },
     custom: {
-        name: global.custom.race0.name,
+        name: 'Custom',
     }
 };
 
