@@ -97,141 +97,6 @@ const universeData = {
 	}
 }
 
-// Races from scr/races.js -> const races = {
-const races = {
-    protoplasm: {
-        name: loc('race_protoplasm'),
-    },
-    human: {
-        name: loc('race_human'),
-    },
-    elven: {
-        name: loc('race_elven'),
-    },
-    orc: {
-        name: loc('race_orc'),
-    },
-    cath: {
-    },
-    wolven: {
-        name: loc('race_wolven'),
-    },
-    centaur: {
-        name: loc('race_centaur'),
-    },
-    kobold: {
-        name: loc('race_kobold'),
-    },
-    goblin: {
-        name: loc('race_goblin'),
-    },
-    gnome: {
-        name: loc('race_gnome'),
-    },
-    ogre: {
-        name: loc('race_ogre'),
-    },
-    cyclops: {
-        name: loc('race_cyclops'),
-    },
-    troll: {
-        name: loc('race_troll'),
-    },
-    tortoisan: {
-        name: loc('race_tortoisan'),
-    },
-    gecko: {
-        name: loc('race_gecko'),
-    },
-    slitheryn: {
-        name: loc('race_slitheryn'),
-    },
-    arraak: {
-        name: loc('race_arraak'),
-    },
-    pterodacti: {
-        name: loc('race_pterodacti'),
-    },
-    dracnid: {
-        name: loc('race_dracnid'),
-    },
-    entish: {
-        name: loc('race_entish'),
-    },
-    cacti: {
-        name: loc('race_cacti'),
-    },
-    pinguicula: {
-        name: loc('race_pinguicula'),
-    },
-    sporgar: {
-        name: loc('race_sporgar'),
-    },
-    shroomi: {
-        name: loc('race_shroomi'),
-    },
-    moldling: {
-        name: loc('race_moldling'),
-    },
-    mantis: {
-        name: loc('race_mantis'),
-    },
-    scorpid: {
-        name: loc('race_scorpid'),
-    },
-    antid: {
-        name: loc('race_antid'),
-    },
-    sharkin: {
-        name: loc('race_sharkin'),
-    },
-    octigoran: {
-        name: loc('race_octigoran'),
-    },
-    dryad: {
-        name: loc('race_dryad'),
-    },
-    satyr: {
-        name: loc('race_satyr'),
-    },
-    phoenix: {
-        name: loc('race_phoenix'),
-    },
-    salamander: {
-        name: loc('race_salamander'),
-    },
-    yeti: {
-        name: loc('race_yeti'),
-    },
-    wendigo: {
-        name: loc('race_wendigo'),
-    },
-    tuskin: {
-        name: loc('race_tuskin'),
-    },
-    kamel: {
-        name: loc('race_kamel'),
-    },
-    balorg: {
-        name: loc('race_balorg'),
-    },
-    imp: {
-        name: loc('race_imp'),
-    },
-    seraph: {
-        name: loc('race_seraph'),
-    },
-    unicorn: {
-        name: loc('race_unicorn'),
-    },
-    junker: {
-        name: loc('race_junker'),
-    },
-    custom: {
-        name: 'Custom',
-    }
-};
-
 // Achievements/feats from src/achieve.js -> const achieve_list = {
 const achieve_list = {
     misc: [
@@ -276,7 +141,7 @@ Object.keys(achieve_list).forEach(function(type){
 });
 
 const feats = {
-    utopia: {
+        utopia: {
         name: loc("feat_utopia_name"),
         desc: loc("feat_utopia_desc"),
         flair: loc("feat_utopia_flair")
@@ -341,6 +206,11 @@ const feats = {
         desc: loc("feat_demon_slayer_desc"),
         flair: loc("feat_demon_slayer_flair")
     },
+    equilibrium: {
+        name: loc("feat_equilibrium_name"),
+        desc: loc("feat_equilibrium_desc"),
+        flair: loc("feat_equilibrium_flair")
+    },
     novice: {
         name: loc("feat_novice_name"),
         desc: loc("feat_achievement_hunter_desc",[10]),
@@ -370,6 +240,11 @@ const feats = {
         name: loc("feat_nephilim_name"),
         desc: loc("feat_nephilim_desc"),
         flair: loc("feat_nephilim_flair")
+    },
+    twisted: {
+        name: loc("feat_twisted_name"),
+        desc: loc("feat_twisted_desc"),
+        flair: loc("feat_twisted_flair")
     },
     friday: {
         name: loc("feat_friday_name"),
@@ -401,6 +276,11 @@ const feats = {
         desc: loc("feat_boo_desc"),
         flair: loc("feat_boo_flair")
     },
+    trickortreat: {
+        name: loc("feat_trickortreat_name"),
+        desc: loc("feat_trickortreat_desc"),
+        flair: loc("feat_trickortreat_flair")
+    },
     thanksgiving: {
         name: loc("feat_gobble_gobble_name"),
         desc: loc("feat_gobble_gobble_desc"),
@@ -419,22 +299,23 @@ const feats = {
 }
 
 const perks = [
-	[ 'mass_extinction', 'achievements' ],
-	[ 'extinct_junker', 'achievements' ],
-	[ 'anarchist', 'achievements' ],
-	[ 'explorer', 'achievements' ],
-	[ 'joyless', 'achievements' ],
-	[ 'steelen', 'achievements' ],
-	[ 'miners_dream', 'achievements' ],
-	[ 'creator', 'achievements' ],
-	[ 'whitehole', 'achievements' ],
 	[ 'blackhole', 'achievements' ],
+    [ 'creator', 'achievements' ],
+    [ 'mass_extinction', 'achievements' ],
+	[ 'explorer', 'achievements' ],
+    [ 'miners_dream', 'achievements' ],
+    [ 'extinct_junker', 'achievements' ],
+    [ 'joyless', 'achievements' ],
+	[ 'steelen', 'achievements' ],
+	[ 'whitehole', 'achievements' ],
+	[ 'heavyweight', 'achievements' ],
 	[ 'dissipated', 'achievements' ],
+	[ 'anarchist', 'achievements' ],
+	[ 'ascended', 'achievements' ],
+	[ 'technophobe', 'achievements' ],
 	[ 'iron_will', 'achievements' ],
 	[ 'failed_history', 'achievements' ],
-	[ 'heavyweight', 'achievements' ],
-	[ 'technophobe', 'achievements' ],
-	[ 'ascended', 'achievements' ],
+	[ 'gladiator', 'achievements' ],
 	[ 'novice', 'feats' ],
 	[ 'journeyman', 'feats' ],
 ];
