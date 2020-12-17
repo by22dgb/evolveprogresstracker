@@ -1401,7 +1401,7 @@ $.each(upgrades, function(index, upgrade){
 	upgradeList.push(index);
 	let html = '<div class="row"><div id="g-'+index+'" class="col-upgrade"></div><div>'+upgrade.title+' <span class="small">('+upgrade.grant[0]+' '+upgrade.grant[1]+')</span></div></div>';
 	$('#crisprList>div').append(html);
-	$('#g-'+index).siblings().first().tooltip({ placement: 'right', 'title': upgrade.title+'<hr class="hr-tip">'+upgrade.cost+' '+(index == 'bleeding_effect' ? 'Anti-Plasmids' : 'Plasmids')+'<hr class="hr-tip"><span class="small">'+upgrade.desc+'</span>', html: true });
+	$('#g-'+index).siblings().first().tooltip({ placement: 'right', 'title': upgrade.title+'<hr class="hr-tip">'+(upgrade.cost1 ? upgrade.cost1+' '+'Plasmids<br />'+upgrade.cost2+' '+'Phages'+(upgrade.cost3 ? '<br />'+upgrade.cost3+'Artifact' : '') : upgrade.cost+' '+(index == 'bleeding_effect' ? 'Anti-Plasmids' : 'Plasmids'))+'<hr class="hr-tip"><span class="small">'+upgrade.desc+'</span>', html: true });
 });
 
 $('#load').on('click', function(){
