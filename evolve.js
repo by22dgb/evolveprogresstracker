@@ -97,6 +97,853 @@ const universeData = {
 	}
 }
 
+// Races from scr/races.js -> const races = {
+const races = {
+    protoplasm: {
+        name: loc('race_protoplasm'),
+        desc: loc('race_protoplasm_desc'),
+        type: 'organism',
+        home: loc('race_prehistoric'),
+        entity: 'ooze',
+        traits: {},
+        solar: {
+            red: loc('race_human_solar_red'),
+            hell: loc('race_human_solar_hell'),
+            gas: loc('race_human_solar_gas'),
+            gas_moon: loc('race_human_solar_gas_moon'),
+            dwarf: loc('race_human_solar_dwarf'),
+        },
+        fanaticism: 'none'
+    },
+    human: {
+        name: loc('race_human'),
+        desc: loc('race_human_desc'),
+        type: 'humanoid',
+        home: loc('race_human_home'),
+        entity: loc('race_human_entity'),
+        traits: {
+            creative: 1,
+            diverse: 1
+        },
+        solar: {
+            red: loc('race_human_solar_red'),
+            hell: loc('race_human_solar_hell'),
+            gas: loc('race_human_solar_gas'),
+            gas_moon: loc('race_human_solar_gas_moon'),
+            dwarf: loc('race_human_solar_dwarf'),
+        },
+        fanaticism: 'creative'
+    },
+    elven: {
+        name: loc('race_elven'),
+        desc: loc(!global.settings.boring && date.getMonth() === 11 && date.getDate() >= 17 ? 'race_xmas_elf_desc' : 'race_elven_desc'),
+        type: 'humanoid',
+        home: loc(!global.settings.boring && date.getMonth() === 11 && date.getDate() >= 17 ? 'race_xmas_elf_home' : 'race_elven_home'),
+        entity: loc('race_elven_entity'),
+        traits: {
+            studious: 1,
+            arrogant: 1
+        },
+        solar: {
+            red: loc(!global.settings.boring && date.getMonth() === 11 && date.getDate() >= 17 ? 'race_xmas_elf_solar_red' : 'race_elven_solar_red'),
+            hell: loc(!global.settings.boring && date.getMonth() === 11 && date.getDate() >= 17 ? 'race_xmas_elf_solar_hell' : 'race_elven_solar_hell'),
+            gas: loc(!global.settings.boring && date.getMonth() === 11 && date.getDate() >= 17 ? 'race_xmas_elf_solar_gas' : 'race_elven_solar_gas'),
+            gas_moon: loc(!global.settings.boring && date.getMonth() === 11 && date.getDate() >= 17 ? 'race_xmas_elf_solar_gas_moon' : 'race_elven_solar_gas_moon'),
+            dwarf: loc(!global.settings.boring && date.getMonth() === 11 && date.getDate() >= 17 ? 'race_xmas_elf_solar_dwarf' : 'race_elven_solar_dwarf'),
+        },
+        fanaticism: 'studious'
+    },
+    orc: {
+        name: loc('race_orc'),
+        desc: loc('race_orc_desc'),
+        type: 'humanoid',
+        home: loc('race_orc_home'),
+        entity: loc('race_orc_entity'),
+        traits: {
+            brute: 1,
+            angry: 1
+        },
+        solar: {
+            red: loc('race_orc_solar_red'),
+            hell: loc('race_orc_solar_hell'),
+            gas: loc('race_orc_solar_gas'),
+            gas_moon: loc('race_orc_solar_gas_moon'),
+            dwarf: loc('race_orc_solar_dwarf'),
+        },
+        fanaticism: 'brute'
+    },
+    cath: {
+        name: loc('race_cath'),
+        desc: loc('race_cath_desc'),
+        type: 'animal',
+        home: loc('race_cath_home'),
+        entity: loc('race_cath_entity'),
+        traits: {
+            lazy: 1,
+            carnivore: 1
+        },
+        solar: {
+            red: loc('race_cath_solar_red'),
+            hell: loc('race_cath_solar_hell'),
+            gas: loc('race_cath_solar_gas'),
+            gas_moon: loc('race_cath_solar_gas_moon'),
+            dwarf: loc('race_cath_solar_dwarf'),
+        },
+        fanaticism: 'carnivore'
+    },
+    wolven: {
+        name: easter.active ? loc('race_rabbit') : loc('race_wolven'),
+        desc: easter.active ? loc('race_rabbit_desc') : loc('race_wolven_desc'),
+        type: 'animal',
+        home: easter.active ? loc('race_rabbit_home') : loc('race_wolven_home'),
+        entity: easter.active ? loc('race_rabbit_entity') : loc('race_wolven_entity'),
+        traits: {
+            pack_mentality: 1,
+            tracker: 1
+        },
+        solar: {
+            red: easter.active ? loc('race_rabbit_solar_red') : loc('race_wolven_solar_red'),
+            hell: easter.active ? loc('race_rabbit_solar_hell') : loc('race_wolven_solar_hell'),
+            gas: easter.active ? loc('race_rabbit_solar_gas') : loc('race_wolven_solar_gas'),
+            gas_moon: easter.active ? loc('race_rabbit_solar_gas_moon') : loc('race_wolven_solar_gas_moon'),
+            dwarf: easter.active ? loc('race_rabbit_solar_dwarf') : loc('race_wolven_solar_dwarf'),
+        },
+        fanaticism: 'tracker'
+    },
+    centaur: {
+        name: loc('race_centaur'),
+        desc: loc('race_centaur_desc'),
+        type: 'animal',
+        home: loc('race_centaur_home'),
+        entity: loc('race_centaur_entity'),
+        traits: {
+            beast_of_burden: 1,
+            herbivore: 1
+        },
+        solar: {
+            red: loc('race_centaur_solar_red'),
+            hell: loc('race_centaur_solar_hell'),
+            gas: loc('race_centaur_solar_gas'),
+            gas_moon: loc('race_centaur_solar_gas_moon'),
+            dwarf: loc('race_centaur_solar_dwarf'),
+        },
+        fanaticism: 'beast_of_burden'
+    },
+    kobold: {
+        name: loc('race_kobold'),
+        desc: loc('race_kobold_desc'),
+        type: 'small',
+        home: loc('race_kobold_home'),
+        entity: loc('race_kobold_entity'),
+        traits: {
+            pack_rat: 1,
+            paranoid: 1
+        },
+        solar: {
+            red: loc('race_kobold_solar_red'),
+            hell: loc('race_kobold_solar_hell'),
+            gas: loc('race_kobold_solar_gas'),
+            gas_moon: loc('race_kobold_solar_gas_moon'),
+            dwarf: loc('race_kobold_solar_dwarf'),
+        },
+        fanaticism: 'pack_rat'
+    },
+    goblin: {
+        name: loc('race_goblin'),
+        desc: loc('race_goblin_desc'),
+        type: 'small',
+        home: loc('race_goblin_home'),
+        entity: loc('race_goblin_entity'),
+        traits: {
+            greedy: 1,
+            merchant: 1
+        },
+        solar: {
+            red: loc('race_goblin_solar_red'),
+            hell: loc('race_goblin_solar_hell'),
+            gas: loc('race_goblin_solar_gas'),
+            gas_moon: loc('race_goblin_solar_gas_moon'),
+            dwarf: loc('race_goblin_solar_dwarf'),
+        },
+        fanaticism: 'merchant'
+    },
+    gnome: {
+        name: loc('race_gnome'),
+        desc: loc('race_gnome_desc'),
+        type: 'small',
+        home: loc('race_gnome_home'),
+        entity: loc('race_gnome_entity'),
+        traits: {
+            smart: 1,
+            puny: 1
+        },
+        solar: {
+            red: loc('race_gnome_solar_red'),
+            hell: loc('race_gnome_solar_hell'),
+            gas: loc('race_gnome_solar_gas'),
+            gas_moon: loc('race_gnome_solar_gas_moon'),
+            dwarf: loc('race_gnome_solar_dwarf'),
+        },
+        fanaticism: 'smart'
+    },
+    ogre: {
+        name: loc('race_ogre'),
+        desc: loc('race_ogre_desc'),
+        type: 'giant',
+        home: loc('race_ogre_home'),
+        entity: loc('race_ogre_entity'),
+        traits: {
+            dumb: 1,
+            tough: 1
+        },
+        solar: {
+            red: loc('race_ogre_solar_red'),
+            hell: loc('race_ogre_solar_hell'),
+            gas: loc('race_ogre_solar_gas'),
+            gas_moon: loc('race_ogre_solar_gas_moon'),
+            dwarf: loc('race_ogre_solar_dwarf'),
+        },
+        fanaticism: 'tough'
+    },
+    cyclops: {
+        name: loc('race_cyclops'),
+        desc: loc('race_cyclops_desc'),
+        type: 'giant',
+        home: loc('race_cyclops_home'),
+        entity: loc('race_cyclops_entity'),
+        traits: {
+            nearsighted: 1,
+            intelligent: 1
+        },
+        solar: {
+            red: loc('race_cyclops_solar_red'),
+            hell: loc('race_cyclops_solar_hell'),
+            gas: loc('race_cyclops_solar_gas'),
+            gas_moon: loc('race_cyclops_solar_gas_moon'),
+            dwarf: loc('race_cyclops_solar_dwarf'),
+        },
+        fanaticism: 'intelligent'
+    },
+    troll: {
+        name: loc('race_troll'),
+        desc: loc('race_troll_desc'),
+        type: 'giant',
+        home: loc('race_troll_home'),
+        entity: loc('race_troll_entity'),
+        traits: {
+            regenerative: 1,
+            gluttony: 1
+        },
+        solar: {
+            red: loc('race_troll_solar_red'),
+            hell: loc('race_troll_solar_hell'),
+            gas: loc('race_troll_solar_gas'),
+            gas_moon: loc('race_troll_solar_gas_moon'),
+            dwarf: loc('race_troll_solar_dwarf'),
+        },
+        fanaticism: 'regenerative'
+    },
+    tortoisan: {
+        name: loc('race_tortoisan'),
+        desc: loc('race_tortoisan_desc'),
+        type: 'reptilian',
+        home: loc('race_tortoisan_home'),
+        entity: loc('race_tortoisan_entity'),
+        traits: {
+            slow: 1,
+            armored: 1
+        },
+        solar: {
+            red: loc('race_tortoisan_solar_red'),
+            hell: loc('race_tortoisan_solar_hell'),
+            gas: loc('race_tortoisan_solar_gas'),
+            gas_moon: loc('race_tortoisan_solar_gas_moon'),
+            dwarf: loc('race_tortoisan_solar_dwarf'),
+        },
+        fanaticism: 'armored'
+    },
+    gecko: {
+        name: loc('race_gecko'),
+        desc: loc('race_gecko_desc'),
+        type: 'reptilian',
+        home: loc('race_gecko_home'),
+        entity: loc('race_gecko_entity'),
+        traits: {
+            optimistic: 1,
+            chameleon: 1
+        },
+        solar: {
+            red: loc('race_gecko_solar_red'),
+            hell: loc('race_gecko_solar_hell'),
+            gas: loc('race_gecko_solar_gas'),
+            gas_moon: loc('race_gecko_solar_gas_moon'),
+            dwarf: loc('race_gecko_solar_dwarf'),
+        },
+        fanaticism: 'optimistic'
+    },
+    slitheryn: {
+        name: loc('race_slitheryn'),
+        desc: loc('race_slitheryn_desc'),
+        type: 'reptilian',
+        home: loc('race_slitheryn_home'),
+        entity: loc('race_slitheryn_entity'),
+        traits: {
+            slow_digestion: 1,
+            hard_of_hearing: 1
+        },
+        solar: {
+            red: loc('race_slitheryn_solar_red'),
+            hell: loc('race_slitheryn_solar_hell'),
+            gas: loc('race_slitheryn_solar_gas'),
+            gas_moon: loc('race_slitheryn_solar_gas_moon'),
+            dwarf: loc('race_slitheryn_solar_dwarf'),
+        },
+        fanaticism: 'slow_digestion'
+    },
+    arraak: {
+        name: loc(!global.settings.boring && date.getMonth() === 10 && date.getDate() >= 22 && date.getDate() <= 28 ? 'race_turkey' : 'race_arraak'),
+        desc: loc(!global.settings.boring && date.getMonth() === 10 && date.getDate() >= 22 && date.getDate() <= 28 ? 'race_turkey_desc' : 'race_arraak_desc'),
+        type: 'avian',
+        home: loc(!global.settings.boring && date.getMonth() === 10 && date.getDate() >= 22 && date.getDate() <= 28 ? 'race_turkey_home' : 'race_arraak_home'),
+        entity: loc('race_arraak_entity'),
+        traits: {
+            resourceful: 1,
+            selenophobia: 1
+        },
+        solar: {
+            red: loc(!global.settings.boring && date.getMonth() === 10 && date.getDate() >= 22 && date.getDate() <= 28 ? 'race_turkey_solar_red' : 'race_arraak_solar_red'),
+            hell: loc(!global.settings.boring && date.getMonth() === 10 && date.getDate() >= 22 && date.getDate() <= 28 ? 'race_turkey_solar_hell' : 'race_arraak_solar_hell'),
+            gas: loc(!global.settings.boring && date.getMonth() === 10 && date.getDate() >= 22 && date.getDate() <= 28 ? 'race_turkey_solar_gas' : 'race_arraak_solar_gas'),
+            gas_moon: loc(!global.settings.boring && date.getMonth() === 10 && date.getDate() >= 22 && date.getDate() <= 28 ? 'race_turkey_solar_gas_moon' : 'race_arraak_solar_gas_moon'),
+            dwarf: loc(!global.settings.boring && date.getMonth() === 10 && date.getDate() >= 22 && date.getDate() <= 28 ? 'race_turkey_solar_dwarf' : 'race_arraak_solar_dwarf'),
+        },
+        fanaticism: 'resourceful'
+    },
+    pterodacti: {
+        name: loc('race_pterodacti'),
+        desc: loc('race_pterodacti_desc'),
+        type: 'avian',
+        home: loc('race_pterodacti_home'),
+        entity: loc('race_pterodacti_entity'),
+        traits: {
+            leathery: 1,
+            pessimistic: 1
+        },
+        solar: {
+            red: loc('race_pterodacti_solar_red'),
+            hell: loc('race_pterodacti_solar_hell'),
+            gas: loc('race_pterodacti_solar_gas'),
+            gas_moon: loc('race_pterodacti_solar_gas_moon'),
+            dwarf: loc('race_pterodacti_solar_dwarf'),
+        },
+        fanaticism: 'leathery'
+    },
+    dracnid: {
+        name: loc('race_dracnid'),
+        desc: loc('race_dracnid_desc'),
+        type: 'avian',
+        home: loc('race_dracnid_home'),
+        entity: loc('race_dracnid_entity'),
+        traits: {
+            hoarder: 1,
+            solitary: 1
+        },
+        solar: {
+            red: loc('race_dracnid_solar_red'),
+            hell: loc('race_dracnid_solar_hell'),
+            gas: loc('race_dracnid_solar_gas'),
+            gas_moon: loc('race_dracnid_solar_gas_moon'),
+            dwarf: loc('race_dracnid_solar_dwarf'),
+        },
+        fanaticism: 'hoarder'
+    },
+    entish: {
+        name: loc('race_entish'),
+        desc: loc('race_entish_desc'),
+        type: 'plant',
+        home: loc('race_entish_home'),
+        entity: loc('race_entish_entity'),
+        traits: {
+            kindling_kindred: 1,
+            pyrophobia: 1
+        },
+        solar: {
+            red: loc('race_entish_solar_red'),
+            hell: loc('race_entish_solar_hell'),
+            gas: loc('race_entish_solar_gas'),
+            gas_moon: loc('race_entish_solar_gas_moon'),
+            dwarf: loc('race_entish_solar_dwarf'),
+        },
+        fanaticism: 'kindling_kindred'
+    },
+    cacti: {
+        name: loc('race_cacti'),
+        desc: loc('race_cacti_desc'),
+        type: 'plant',
+        home: loc('race_cacti_home'),
+        entity: loc('race_cacti_entity'),
+        traits: {
+            hyper: 1,
+            skittish: 1
+        },
+        solar: {
+            red: loc('race_cacti_solar_red'),
+            hell: loc('race_cacti_solar_hell'),
+            gas: loc('race_cacti_solar_gas'),
+            gas_moon: loc('race_cacti_solar_gas_moon'),
+            dwarf: loc('race_cacti_solar_dwarf'),
+        },
+        fanaticism: 'hyper'
+    },
+    pinguicula: {
+        name: loc('race_pinguicula'),
+        desc: loc('race_pinguicula_desc'),
+        type: 'plant',
+        home: loc('race_pinguicula_home'),
+        entity: loc('race_pinguicula_entity'),
+        traits: {
+            fragrant: 1,
+            sticky: 1
+        },
+        solar: {
+            red: loc('race_pinguicula_solar_red'),
+            hell: loc('race_pinguicula_solar_hell'),
+            gas: loc('race_pinguicula_solar_gas'),
+            gas_moon: loc('race_pinguicula_solar_gas_moon'),
+            dwarf: loc('race_pinguicula_solar_dwarf'),
+        },
+        fanaticism: 'sticky'
+    },
+    sporgar: {
+        name: loc('race_sporgar'),
+        desc: loc('race_sporgar_desc'),
+        type: 'fungi',
+        home: loc('race_sporgar_home'),
+        entity: loc('race_sporgar_entity'),
+        traits: {
+            infectious: 1,
+            parasite: 1
+        },
+        solar: {
+            red: loc('race_sporgar_solar_red'),
+            hell: loc('race_sporgar_solar_hell'),
+            gas: loc('race_sporgar_solar_gas'),
+            gas_moon: loc('race_sporgar_solar_gas_moon'),
+            dwarf: loc('race_sporgar_solar_dwarf'),
+        },
+        fanaticism: 'infectious'
+    },
+    shroomi: {
+        name: loc('race_shroomi'),
+        desc: loc('race_shroomi_desc'),
+        type: 'fungi',
+        home: loc('race_shroomi_home'),
+        entity: loc('race_shroomi_entity'),
+        traits: {
+            toxic: 1,
+            nyctophilia: 1
+        },
+        solar: {
+            red: loc('race_shroomi_solar_red'),
+            hell: loc('race_shroomi_solar_hell'),
+            gas: loc('race_shroomi_solar_gas'),
+            gas_moon: loc('race_shroomi_solar_gas_moon'),
+            dwarf: loc('race_shroomi_solar_dwarf'),
+        },
+        fanaticism: 'toxic'
+    },
+    moldling: {
+        name: loc('race_moldling'),
+        desc: loc('race_moldling_desc'),
+        type: 'fungi',
+        home: loc('race_moldling_home'),
+        entity: loc('race_moldling_entity'),
+        traits: {
+            infiltrator: 1,
+            hibernator: 1
+        },
+        solar: {
+            red: loc('race_moldling_solar_red'),
+            hell: loc('race_moldling_solar_hell'),
+            gas: loc('race_moldling_solar_gas'),
+            gas_moon: loc('race_moldling_solar_gas_moon'),
+            dwarf: loc('race_moldling_solar_dwarf'),
+        },
+        fanaticism: 'infiltrator'
+    },
+    mantis: {
+        name: loc('race_mantis'),
+        desc: loc('race_mantis_desc'),
+        type: 'insectoid',
+        home: loc('race_mantis_home'),
+        entity: loc('race_mantis_entity'),
+        traits: {
+            cannibalize: 1,
+            malnutrition: 1
+        },
+        solar: {
+            red: loc('race_mantis_solar_red'),
+            hell: loc('race_mantis_solar_hell'),
+            gas: loc('race_mantis_solar_gas'),
+            gas_moon: loc('race_mantis_solar_gas_moon'),
+            dwarf: loc('race_mantis_solar_dwarf'),
+        },
+        fanaticism: 'cannibalize'
+    },
+    scorpid: {
+        name: loc('race_scorpid'),
+        desc: loc('race_scorpid_desc'),
+        type: 'insectoid',
+        home: loc('race_scorpid_home'),
+        entity: loc('race_scorpid_entity'),
+        traits: {
+            claws: 1,
+            atrophy: 1
+        },
+        solar: {
+            red: loc('race_scorpid_solar_red'),
+            hell: loc('race_scorpid_solar_hell'),
+            gas: loc('race_scorpid_solar_gas'),
+            gas_moon: loc('race_scorpid_solar_gas_moon'),
+            dwarf: loc('race_scorpid_solar_dwarf'),
+        },
+        fanaticism: 'claws'
+    },
+    antid: {
+        name: loc('race_antid'),
+        desc: loc('race_antid_desc'),
+        type: 'insectoid',
+        home: loc('race_antid_home'),
+        entity: loc('race_antid_entity'),
+        traits: {
+            hivemind: 1,
+            tunneler: 1
+        },
+        solar: {
+            red: loc('race_antid_solar_red'),
+            hell: loc('race_antid_solar_hell'),
+            gas: loc('race_antid_solar_gas'),
+            gas_moon: loc('race_antid_solar_gas_moon'),
+            dwarf: loc('race_antid_solar_dwarf'),
+        },
+        fanaticism: 'hivemind'
+    },
+    sharkin: {
+        name: loc('race_sharkin'),
+        desc: loc('race_sharkin_desc'),
+        type: 'aquatic',
+        home: loc('race_sharkin_home'),
+        entity: loc('race_sharkin_entity'),
+        traits: {
+            frenzy: 1,
+            apex_predator: 1
+        },
+        solar: {
+            red: loc('race_sharkin_solar_red'),
+            hell: loc('race_sharkin_solar_hell'),
+            gas: loc('race_sharkin_solar_gas'),
+            gas_moon: loc('race_sharkin_solar_gas_moon'),
+            dwarf: loc('race_sharkin_solar_dwarf'),
+        },
+        fanaticism: 'frenzy'
+    },
+    octigoran: {
+        name: loc('race_octigoran'),
+        desc: loc('race_octigoran_desc'),
+        type: 'aquatic',
+        home: loc('race_octigoran_home'),
+        entity: loc('race_octigoran_entity'),
+        traits: {
+            invertebrate: 1,
+            suction_grip: 1
+        },
+        solar: {
+            red: loc('race_octigoran_solar_red'),
+            hell: loc('race_octigoran_solar_hell'),
+            gas: loc('race_octigoran_solar_gas'),
+            gas_moon: loc('race_octigoran_solar_gas_moon'),
+            dwarf: loc('race_octigoran_solar_dwarf'),
+        },
+        fanaticism: 'suction_grip'
+    },
+    dryad: {
+        name: loc('race_dryad'),
+        desc: loc('race_dryad_desc'),
+        type: 'fey',
+        home: loc('race_dryad_home'),
+        entity: loc('race_dryad_entity'),
+        traits: {
+            befuddle: 1,
+            environmentalist: 1,
+            kindling_kindred: 1
+        },
+        solar: {
+            red: loc('race_dryad_solar_red'),
+            hell: loc('race_dryad_solar_hell'),
+            gas: loc('race_dryad_solar_gas'),
+            gas_moon: loc('race_dryad_solar_gas_moon'),
+            dwarf: loc('race_dryad_solar_dwarf'),
+        },
+        fanaticism: 'befuddle'
+    },
+    satyr: {
+        name: loc('race_satyr'),
+        desc: loc('race_satyr_desc'),
+        type: 'fey',
+        home: loc('race_satyr_home'),
+        entity: loc('race_satyr_entity'),
+        traits: {
+            unorganized: 1,
+            musical: 1
+        },
+        solar: {
+            red: loc('race_satyr_solar_red'),
+            hell: loc('race_satyr_solar_hell'),
+            gas: loc('race_satyr_solar_gas'),
+            gas_moon: loc('race_satyr_solar_gas_moon'),
+            dwarf: loc('race_satyr_solar_dwarf'),
+        },
+        fanaticism: 'musical'
+    },
+    phoenix: {
+        name: loc('race_phoenix'),
+        desc: loc('race_phoenix_desc'),
+        type: 'heat',
+        home: loc('race_phoenix_home'),
+        entity: loc('race_phoenix_entity'),
+        traits: {
+            revive: 1,
+            slow_regen: 1
+        },
+        solar: {
+            red: loc('race_phoenix_solar_red'),
+            hell: loc('race_phoenix_solar_hell'),
+            gas: loc('race_phoenix_solar_gas'),
+            gas_moon: loc('race_phoenix_solar_gas_moon'),
+            dwarf: loc('race_phoenix_solar_dwarf'),
+        },
+        fanaticism: 'revive'
+    },
+    salamander: {
+        name: loc('race_salamander'),
+        desc: loc('race_salamander_desc'),
+        type: 'heat',
+        home: loc('race_salamander_home'),
+        entity: loc('race_salamander_entity'),
+        traits: {
+            forge: 1,
+            autoignition: 1
+        },
+        solar: {
+            red: loc('race_salamander_solar_red'),
+            hell: loc('race_salamander_solar_hell'),
+            gas: loc('race_salamander_solar_gas'),
+            gas_moon: loc('race_salamander_solar_gas_moon'),
+            dwarf: loc('race_salamander_solar_dwarf'),
+        },
+        fanaticism: 'forge'
+    },
+    yeti: {
+        name: loc('race_yeti'),
+        desc: loc('race_yeti_desc'),
+        type: 'polar',
+        home: loc('race_yeti_home'),
+        entity: loc('race_yeti_entity'),
+        traits: {
+            blurry: 1,
+            snowy: 1
+        },
+        solar: {
+            red: loc('race_yeti_solar_red'),
+            hell: loc('race_yeti_solar_hell'),
+            gas: loc('race_yeti_solar_gas'),
+            gas_moon: loc('race_yeti_solar_gas_moon'),
+            dwarf: loc('race_yeti_solar_dwarf'),
+        },
+        fanaticism: 'blurry'
+    },
+    wendigo: {
+        name: loc('race_wendigo'),
+        desc: loc('race_wendigo_desc'),
+        type: 'polar',
+        home: loc('race_wendigo_home'),
+        entity: loc('race_wendigo_entity'),
+        traits: {
+            ravenous: 1,
+            ghostly: 1,
+            soul_eater: 1
+        },
+        solar: {
+            red: loc('race_wendigo_solar_red'),
+            hell: loc('race_wendigo_solar_hell'),
+            gas: loc('race_wendigo_solar_gas'),
+            gas_moon: loc('race_wendigo_solar_gas_moon'),
+            dwarf: loc('race_wendigo_solar_dwarf'),
+        },
+        fanaticism: 'ghostly'
+    },
+    tuskin: {
+        name: loc('race_tuskin'),
+        desc: loc('race_tuskin_desc'),
+        type: 'sand',
+        home: loc('race_tuskin_home'),
+        entity: loc('race_tuskin_entity'),
+        traits: {
+            lawless: 1,
+            mistrustful: 1
+        },
+        solar: {
+            red: loc('race_tuskin_solar_red'),
+            hell: loc('race_tuskin_solar_hell'),
+            gas: loc('race_tuskin_solar_gas'),
+            gas_moon: loc('race_tuskin_solar_gas_moon'),
+            dwarf: loc('race_tuskin_solar_dwarf'),
+        },
+        fanaticism: 'lawless'
+    },
+    kamel: {
+        name: loc('race_kamel'),
+        desc: loc('race_kamel_desc'),
+        type: 'sand',
+        home: loc('race_kamel_home'),
+        entity: loc('race_kamel_entity'),
+        traits: {
+            humpback: 1,
+            thalassophobia: 1
+        },
+        solar: {
+            red: loc('race_kamel_solar_red'),
+            hell: loc('race_kamel_solar_hell'),
+            gas: loc('race_kamel_solar_gas'),
+            gas_moon: loc('race_kamel_solar_gas_moon'),
+            dwarf: loc('race_kamel_solar_dwarf')
+        },
+        fanaticism: 'humpback'
+    },
+    balorg: {
+        name: loc('race_balorg'),
+        desc: loc('race_balorg_desc'),
+        type: 'demonic',
+        home: loc('race_balorg_home'),
+        entity: loc('race_balorg_entity'),
+        traits: {
+            fiery: 1,
+            terrifying: 1,
+            slaver: 1
+        },
+        solar: {
+            red: loc('race_balorg_solar_red'),
+            hell: loc('race_balorg_solar_hell'),
+            gas: loc('race_balorg_solar_gas'),
+            gas_moon: loc('race_balorg_solar_gas_moon'),
+            dwarf: loc('race_balorg_solar_dwarf'),
+        },
+        fanaticism: 'fiery'
+    },
+    imp: {
+        name: loc('race_imp'),
+        desc: loc('race_imp_desc'),
+        type: 'demonic',
+        home: loc('race_imp_home'),
+        entity: loc('race_imp_entity'),
+        traits: {
+            compact: 1,
+            conniving: 1,
+            pathetic: 1,
+        },
+        solar: {
+            red: loc('race_imp_solar_red'),
+            hell: loc('race_imp_solar_hell'),
+            gas: loc('race_imp_solar_gas'),
+            gas_moon: loc('race_imp_solar_gas_moon'),
+            dwarf: loc('race_imp_solar_dwarf'),
+        },
+        fanaticism: 'conniving'
+    },
+    seraph: {
+        name: loc(!global.settings.boring && date.getMonth() === 1 && date.getDate() === 14 ? 'race_cherub' : 'race_seraph'),
+        desc: loc(!global.settings.boring && date.getMonth() === 1 && date.getDate() === 14 ? 'race_cherub_desc' : 'race_seraph_desc'),
+        type: 'angelic',
+        home: loc(!global.settings.boring && date.getMonth() === 1 && date.getDate() === 14 ? 'race_cherub_home' : 'race_seraph_home'),
+        entity: loc(!global.settings.boring && date.getMonth() === 1 && date.getDate() === 14 ? 'race_cherub_entity' : 'race_seraph_entity'),
+        traits: {
+            unified: 1,
+            spiritual: 1,
+            truthful: 1
+        },
+        solar: {
+            red: loc(!global.settings.boring && date.getMonth() === 1 && date.getDate() === 14 ? 'race_cherub_solar_red' : 'race_seraph_solar_red'),
+            hell: loc(!global.settings.boring && date.getMonth() === 1 && date.getDate() === 14 ? 'race_cherub_solar_hell' : 'race_seraph_solar_hell'),
+            gas: loc(!global.settings.boring && date.getMonth() === 1 && date.getDate() === 14 ? 'race_cherub_solar_gas' : 'race_seraph_solar_gas'),
+            gas_moon: loc(!global.settings.boring && date.getMonth() === 1 && date.getDate() === 14 ? 'race_cherub_solar_gas_moon' : 'race_seraph_solar_gas_moon'),
+            dwarf: loc(!global.settings.boring && date.getMonth() === 1 && date.getDate() === 14 ? 'race_cherub_solar_dwarf' : 'race_seraph_solar_dwarf'),
+        },
+        fanaticism: 'spiritual'
+    },
+    unicorn: {
+        name: loc('race_unicorn'),
+        desc: loc('race_unicorn_desc'),
+        type: 'angelic',
+        home: loc('race_unicorn_home'),
+        entity: loc('race_unicorn_entity'),
+        traits: {
+            rainbow: 1,
+            magnificent: 1,
+            noble: 1,
+        },
+        solar: {
+            red: loc('race_unicorn_solar_red'),
+            hell: loc('race_unicorn_solar_hell'),
+            gas: loc('race_unicorn_solar_gas'),
+            gas_moon: loc('race_unicorn_solar_gas_moon'),
+            dwarf: loc('race_unicorn_solar_dwarf'),
+        },
+        fanaticism: 'magnificent'
+    },
+    junker: {
+        name: hallowed.active ? loc('race_ghoul') : loc('race_junker'),
+        desc: hallowed.active ? loc('race_ghoul_desc') : loc('race_junker_desc'),
+        type: (function(){ return global.race.hasOwnProperty('jtype') ? global.race.jtype : 'humanoid'; })(),
+        home: hallowed.active ? loc('race_ghoul_home') : loc('race_junker_home'),
+        entity: hallowed.active ? loc('race_ghoul_entity') : loc('race_junker_entity'),
+        traits: {
+            diverse: 1,
+            arrogant: 1,
+            angry: 1,
+            lazy: 1,
+            herbivore: 1,
+            paranoid: 1,
+            greedy: 1,
+            puny: 1,
+            dumb: 1,
+            nearsighted: 1,
+            gluttony: 1,
+            slow: 1,
+            hard_of_hearing: 1,
+            pessimistic: 1,
+            solitary: 1,
+            pyrophobia: 1,
+            skittish: 1,
+            nyctophilia: 1,
+            frail: 1,
+            atrophy: 1,
+            invertebrate: 1,
+            pathetic: 1,
+            hibernator: 1
+        },
+        solar: {
+            red: hallowed.active ? loc('race_ghoul_solar_red') : loc('race_junker_solar_red'),
+            hell: hallowed.active ? loc('race_ghoul_solar_hell') : loc('race_junker_solar_hell'),
+            gas: hallowed.active ? loc('race_ghoul_solar_gas') : loc('race_junker_solar_gas'),
+            gas_moon: hallowed.active ? loc('race_ghoul_solar_gas_moon') : loc('race_junker_solar_gas_moon'),
+            dwarf: hallowed.active ? loc('race_ghoul_solar_dwarf') : loc('race_junker_solar_dwarf'),
+        },
+        fanaticism: 'none'
+    },
+    custom: customRace()
+};
+
+
 // Achievements/feats from src/achieve.js -> const achieve_list = {
 const achieve_list = {
     misc: [
