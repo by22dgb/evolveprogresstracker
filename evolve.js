@@ -1335,7 +1335,7 @@ const keywords = {
 	eviltwin: ['reset', 'universe'],
 	microbang: ['reset', 'universe'],
 	pw_apocalypse: ['reset', 'universe'],
-    fullmetal: ['other'],
+    fullmetal: ['universe'],
     pass: ['reset', 'universe'],
 	joyless: ['progression', 'challenge'],
 	steelen: ['challenge', 'reset', 'perk'],
