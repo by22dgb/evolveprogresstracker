@@ -1201,7 +1201,7 @@ const perksDesc = {
 		loc("achieve_perks_iron_will5")
     ],
 	failed_history: loc("achieve_perks_failed_history",[1]),
-    gladiator: loc("achieve_perks_gladiator",[gladiatorDesc * 20]),
+    gladiator: loc("achieve_perks_gladiator",[gladiatorDesc]),
 	novice: loc("achieve_perks_novice",[novice1Desc, novice2Desc]),
 	journeyman: [
 		loc("achieve_perks_journeyman2",[journeyman1Desc, journeyman2Desc]),
