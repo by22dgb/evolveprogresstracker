@@ -1095,6 +1095,7 @@ let blackholeDesc = mass_extinctionDesc = creatorDesc = explorerDesc = whitehole
 let heavyweightDesc = dissipated3Desc = dissipated4Desc = anarchistDesc = steelenDesc = '';
 let novice1Desc = novice2Desc = journeyman1Desc = journeyman2Desc = minersDesc = joylessDesc = '';
 let technoDesc5 = '';
+let gladiatorDesc = data.stats.achieve['gladiator'] ? data.stats.achieve.gladiator.l : 1;
 for (i = 1; i <= 5; i++) {
 	blackholeDesc += i * 5;
 	if (i < 5) blackholeDesc += '% / ';
@@ -1156,16 +1157,16 @@ const filters = {
 
 const perksDesc = {
 	blackhole: loc("achieve_perks_blackhole",[blackholeDesc]),
-	mass_extinction: [
+	creator: loc("achieve_perks_creator",[creatorDesc]),
+    mass_extinction: [
 		loc("achieve_perks_mass_extinction"),
 		loc("achieve_perks_mass_extinction2",[mass_extinctionDesc]),
 	],
-	creator: loc("achieve_perks_creator",[creatorDesc]),
-	miners_dream: loc("achieve_perks_miners_dream",[minersDesc]),
 	explorer: loc("achieve_perks_explorer",[explorerDesc]),
+    miners_dream: loc("achieve_perks_miners_dream",[minersDesc]),
+    extinct_junker: loc("achieve_perks_enlightened"),
 	joyless: loc("achieve_perks_joyless",[joylessDesc]),
 	steelen: loc("achieve_perks_steelen",[steelenDesc]),
-	extinct_junker: loc("achieve_perks_enlightened"),
 	whitehole: [
 		loc("achieve_perks_whitehole"),
 		loc("achieve_perks_whitehole2",[whitehole2Desc])
@@ -1177,15 +1178,10 @@ const perksDesc = {
 		loc("achieve_perks_dissipated3",[1]),
 		loc("achieve_perks_dissipated4",[1])
 	],
-    iron_will: [
-		loc("achieve_perks_iron_will1",[0.15]),
-		loc("achieve_perks_iron_will2",[10]),
-		loc("achieve_perks_iron_will3",[6]),
-		loc("achieve_perks_iron_will4",[1]),
-		loc("achieve_perks_iron_will5")
+    anarchist: loc("achieve_perks_anarchist",[anarchistDesc]),
+    ascended: [
+        '+1 gene during custom species creation per star level per universe (max of +5 genes per universe). This perk is not currently listed on the stats page in-game.'
     ],
-	failed_history: loc("achieve_perks_failed_history",[1]),
-	anarchist: loc("achieve_perks_anarchist",[anarchistDesc]),
 	technophobe: [
 		'0 Star: '+loc("achieve_perks_technophobe1",[25]),
 		'1 Star: '+loc("achieve_perks_technophobe2",[10]),
@@ -1195,9 +1191,15 @@ const perksDesc = {
 		'4 Star: '+loc("achieve_perks_technophobe4",[10]),
 		loc("achieve_perks_technophobe5",[technoDesc5]).substring(loc("achieve_perks_technophobe5",[technoDesc5]).length-1, 1)+' per star level'
 	],
-    ascended: [
-        '+1 gene during custom species creation per star level per universe (max of +5 genes per universe). This perk is not currently listed on the stats page in-game.'
+    iron_will: [
+		loc("achieve_perks_iron_will1",[0.15]),
+		loc("achieve_perks_iron_will2",[10]),
+		loc("achieve_perks_iron_will3",[6]),
+		loc("achieve_perks_iron_will4",[1]),
+		loc("achieve_perks_iron_will5")
     ],
+	failed_history: loc("achieve_perks_failed_history",[1]),
+    Gladiator: loc("achieve_perks_gladiator",[gladiatorDesc * 20]),
 	novice: loc("achieve_perks_novice",[novice1Desc, novice2Desc]),
 	journeyman: [
 		loc("achieve_perks_journeyman2",[journeyman1Desc, journeyman2Desc]),
