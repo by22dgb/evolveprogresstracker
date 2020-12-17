@@ -1126,9 +1126,8 @@ for (i = 1; i <= 5; i++) {
 	if (i < 5) minersDesc += ' / ';
 	technoDesc5 += i;
 	if (i < 5) technoDesc5 += ' / +';
-	if (i < 5) gladiatorDesc += '% / ';
 	gladiatorDesc += i * 20;
-
+    if (i < 5) gladiatorDesc += '% / ';
 }
 //let dissipated2Desc = `1kW (${star2}) / +2kw (${star4})`;
 let dissipated2Desc = `1kW (2-star) / +2 (4-star)`;
