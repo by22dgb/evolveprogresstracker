@@ -798,6 +798,8 @@ var cnRegReplace = new Map([
     [/^([\d\.]+)% of Anti-Plasmids function outside the antimatter universe$/, '在其他宇宙，反质粒的有效激活率为反物质宇宙的 $1%'],
     [/^(\d+) Plasmids$/, '$1 质粒'],
     [/^(\d+) Anti-Plasmids$/, '$1 反质粒'],
+    [/^(\d+) Phages$/, '$1 噬菌体'],
+    [/^(\d+) Artifact$/, '$1 上古遗物'],
     [/^([\d\.]+)% Complete$/, '完成率：$1%'],
     [/^Standard Universe: (\d+) of (\d+) \($/, '标准宇宙：$1个已获得，共$2个('],
     [/^Heavy Universe: (\d+) of (\d+) \($/, '高引力宇宙：$1个已获得，共$2个('],
